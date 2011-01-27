@@ -1,0 +1,19 @@
+base: &base
+  adapter: mysql
+  host: localhost
+  user: root
+  password: temp123!
+  
+development: 
+  database: blog_dev
+  <<: *base
+  
+test: 
+  database: blog_test
+  <<: *base
+
+production: 
+  database: blog_pro
+  <<: *base
+
+  

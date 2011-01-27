@@ -1,0 +1,56 @@
+<p id="notice"><%= flash[:notice] %></p>
+<p id="alert"><%= flash[:alert] %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @post.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @post.content %>
+</p>
+
+<p>
+  <b>Publish at:</b>
+  <%= @post.publish_at %>
+</p>
+
+<p>
+  <b>Reads:</b>
+  <%= @post.reads %>
+</p>
+
+<p>
+  <b>Private:</b>
+  <%= @post.private %>
+</p>
+
+<div id="comments">
+  <%= form_for [@post, @comment] do |f| %>
+    <ul>
+      <li>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+      </li>
+      <li>
+        <%= f.label :content %>
+        <%= f.text_area :content %>
+      </li>
+      <li><button type="submit">Post Comment</button></li>
+    </ul>
+  <%- end %>
+</div>
+<%- if @comments.any? -%>
+  <%- @comments.each do |comment| -%>
+    <li>
+      <b><%= comment.email %></b>
+      <p><%= comment.content %></p>
+    </li>
+  <%- end -%>
+<%- else -%>
+  Nobody loves you...
+<%- end -%>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
