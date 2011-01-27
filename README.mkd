@@ -3,31 +3,41 @@
 ## Terminal Commands
 
 * create a new rails application
+
   `rails new blog`
 
 * ensure all of your applications dependencies are installed
+
   `bundle check`
   
 * install all of your applications dependencies
+
   `bundle install`
 
 * help & usage command for rails generate
+
   `rails g`
   
 * help & usage command for rails generate scaffold
+
   `rails g scaffold`
   
 * scaffolding the MVC of a given model
+
   `rails g scaffold post title:string content:text publish_at:datetime reads:integer private:boolean`
   
 * creating a database schema change using ruby
+
   `rails g migration update_posts`
   
 * show all available rake tasks
+
   `rake -T`
   
 * create the development database you configured 
+
   `rake db:create`
   
 * run any pending database migrations
+
   `rake db:migrate`
